@@ -17,4 +17,8 @@
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Repository" />
 	</context:component-scan>	
+	
+	<!-- 정적 자원 처리를 위해 디폴터 서블릿 위임 핸들러 -->
+	<mvc:annotation-driven />
+	<mvc:default-servlet-handler />
 </beans>
