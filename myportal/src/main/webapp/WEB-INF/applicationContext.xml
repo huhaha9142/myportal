@@ -21,7 +21,7 @@
 		<!-- DB 설정 -->
 		<property name="URL" value="jdbc:oracle:this:@localhost:1521:xe" />
 		<property name="user" value="C##WEBDB" />
-		<property name="password" value="bituser" />
+		<property name="password" value="webdb" />
 		<property name="connectionCachingEnabled" value="true" />
 		<qualifier value="main-db" />
 	</bean>
