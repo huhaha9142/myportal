@@ -24,6 +24,14 @@
       </plugin>
     </plugins>
   </build>
+<!-- Oracle 드라이버 저장소 -->
+  <repositories>
+  	<repository>
+		<id>oracle</id>
+	 	<name>ORACLE JDBC repository</name>
+	 	<url>http://www.datanucleus.org/downloads/maven2/</url>
+	</repository>
+  </repositories>
  <!-- Dependency List -->
 <dependencies>
   	<!-- Spring Context -->
@@ -57,5 +65,39 @@
 	    <artifactId>jstl</artifactId>
 	    <version>1.2</version>
 	</dependency>
+	
+	<!-- Spring JDBC -->
+	<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-jdbc</artifactId>
+	    <version>${org.springframework-version}</version>
+	</dependency>
+	
+	<!-- Oracle Driver -->
+	<!-- https://mvnrepository.com/artifact/com.oracle/ojdbc6 -->
+<!-- Oracle Driver -->
+	<dependency>
+		<groupId>oracle</groupId>
+		<artifactId>ojdbc6</artifactId>
+		<version>11.2.0.3</version>
+	</dependency>
+	
+	<!-- MyBatis -->
+	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis</artifactId>
+	    <version>3.5.7</version>
+	</dependency>
+	
+	<!-- MyBatis Spring -->
+	<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
+	<dependency>
+	    <groupId>org.mybatis</groupId>
+	    <artifactId>mybatis-spring</artifactId>
+	    <version>2.0.6</version>
+	</dependency>
+	
 </dependencies>    
 </project>

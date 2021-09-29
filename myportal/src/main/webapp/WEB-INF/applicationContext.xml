@@ -12,4 +12,31 @@
 		<context:exclude-filter type="annotation"
 			expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
+	
+	<!-- Oracle DataSource 등록 -->
+	<bean id="oracleDatasource"
+		class="oracle.jdbc.pool.OracleDataSource"
+		destroy-method="close">
+
+		<!-- DB 설정 -->
+		<property name="URL" value="jdbc:oracle:this:@localhost:1521:xe" />
+		<property name="user" value="C##WEBDB" />
+		<property name="password" value="bituser" />
+		<property name="connectionCachingEnabled" value="true" />
+		<qualifier value="main-db" />
+	</bean>
+	
+	<!-- MyBatis SqlSessionFactoryBean에 연결 -->
+	<bean id="sqlSessionFactory"
+		class="org.mybatis.spring.SqlSessionFactoryBean">
+		<!-- 데이터 소스 연결 -->	
+		<property name="dataSource" ref="oracleDatasource" />
+		<property name="configLocation" value="classpath:mybatis/configuration.xml" /> 
+	</bean>
+	
+	<!-- MyBatis SqlSessionTemplate 연결 -->
+	<bean id="sqlSession"
+		class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />	
+	</bean>
 </beans>
