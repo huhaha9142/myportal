@@ -10,7 +10,7 @@ import org.springframework.stereotype.Repository;
 public class GuestbookDaoImpl implements GuestbookDao {
 	@Autowired
 	SqlSession sqlSession;
-	
+
 	@Override
 	public List<GuestbookVo> selectAll() {
 		List<GuestbookVo> list = sqlSession.selectList("guestbook.selectAll");

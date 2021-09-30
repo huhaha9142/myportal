@@ -14,8 +14,8 @@ import com.bitacademy.myportal.service.GuestbookService;
 @Controller
 public class GuestbookController {
 	@Autowired
-	GuestbookService  guestbookServiceImpl;
-	
+	GuestbookService guestbookServiceImpl;
+
 	@RequestMapping({"", "/", "/list"})
 	public String list(Model model) {
 		List<GuestbookVo> list = guestbookServiceImpl.getMessageList();

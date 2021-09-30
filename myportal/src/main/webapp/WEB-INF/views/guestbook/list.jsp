@@ -8,7 +8,7 @@
 <title>My Homepage</title>
 </head>
 <body>
-  
+
 	<h1>방명록</h1>
 	<form action="" 
 			method="POST">
@@ -44,6 +44,6 @@
 			<td colspan=4>게시물 내용</td>
 		</tr>
 	</table>
-    
+
 </body>
-</html>
+</html> 
