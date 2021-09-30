@@ -6,8 +6,19 @@
 <head>
 <meta charset="UTF-8">
 <title>My Homepage</title>
+<script 
+	type="text/javascript" 
+	src="<c:url value="/javascript/jquery/jquery-3.6.0.js" />"></script>
+<link rel="stylesheet" 
+	href="<c:url value="/css/guestbook.css" />" />src="<c:url value="/javascript/jquery/jquery-3.6.0.js" />"</script>
 </head>
 <body>
+
+  	<div id="container">
+		<jsp:include page="/WEB-INF/views/includes/header.jsp" />
+		<jsp:include page="/WEB-INF/views/includes/navigation.jsp" />
+		<div id="wrapper">
+			<div id="content">
 
 	<h1>방명록</h1>
 	<form action="<c:url value="/guestbook/write" />" method="POST">
@@ -45,5 +56,12 @@
 		</tr>
 	</table>
 	</c:forEach>
+	
+	
+
+    		</div>
+		</div>
+		<%@ include file="/WEB-INF/views/includes/footer.jsp" %>
+	</div>
 </body>
 </html> 
