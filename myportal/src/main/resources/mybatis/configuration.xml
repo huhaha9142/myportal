@@ -6,8 +6,10 @@
 <configuration>
 	<!-- 객체 별칭 -->
 	<typeAliases>
+		<typeAlias alias="guestbookVo" type="com.bitacademy.myportal.repository.GuestbookVo" />
 	</typeAliases>
 	<!-- 매핑 설정 -->
-	<mappers>
+	<mappers>		<!-- 변경 후 에러 뜸 확인 -->
+		<mapper resource="mybatis/mappers/guestbook.xml" />
 	</mappers>
 </configuration>
