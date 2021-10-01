@@ -30,7 +30,7 @@
 		<input type="text" name="email" placeholder="이메일을 입력하십시오."><br>
 	
 		<input type="button" value="id 중복 체크"
-			onClick="checkEmail(this, '<c:url value="/users/emailcheck" />')" />
+			onClick="checkEmail(this, '<c:url value="/api/users/emailcheck" />')" />
 			
 		<label for="gender">성별</label>
 		<input type="radio" name="gender" value="M" checked>남성</radio>

@@ -13,4 +13,13 @@
 	FROM users
 	WHERE email=#{email} AND password=#{password}
 	</select>
+	
+	<select id="selectUserByEmail"
+		parameterType="string"
+		resultType="userVo">
+	SELECT no,
+		name, email, gender
+	FROM users
+	WHERE email=#{value}	
+	</select>
 </mapper>

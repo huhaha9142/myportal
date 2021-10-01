@@ -1,5 +1,8 @@
 package com.bitacademy.myportal.controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.bitacademy.myportal.exception.UserDaoException;
 import com.bitacademy.myportal.repository.UserVo;
@@ -90,5 +94,22 @@ public class UsersController {
 		//	세션 무효화
 		session.invalidate();
 		return "redirect:/";
+	}
+	
+	//	이메일 중복 체크(JSON API)
+	@ResponseBody //	MessageConverter 통과
+	@RequestMapping("/emailcheck")
+	public Object exists(@RequestParam(value="email", 
+										required=true, 
+										defaultValue="")String email) {
+		UserVo vo = userServiceImpl.getUser(email);
+		//	vo == null이면 중복 이메일이 없다
+		boolean exists = vo != null ? true : false;	//	중복 여부
+		
+		Map<String, Object> map = new HashMap<>();
+		map.put("result", "success");
+		map.put("data", exists);
+		
+		return map;
 	}
 }
