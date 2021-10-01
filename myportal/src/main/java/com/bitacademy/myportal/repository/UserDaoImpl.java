@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.bitacademy.myportal.exception.UserDaoException;
+
 @Repository
 public class UserDaoImpl implements UserDao {
 	@Autowired
@@ -15,9 +17,14 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public int insert(UserVo vo) {
 		int count = 0;
-		count = sqlSession.insert("users.insert", vo);
 		
-		//	TODO: 예외처리 필요
+		try {
+			count = sqlSession.insert("users.insert", vo);
+		} catch (Exception e) {
+			e.printStackTrace();
+			//	상황 정보를 담은 구체적 예외로 전환
+			throw new UserDaoException("회원가입 중 오류!", vo);
+		}
 		
 		return count;
 	}

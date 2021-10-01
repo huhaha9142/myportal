@@ -1,8 +1,6 @@
 package com.bitacademy.myportal.controllers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -34,13 +32,13 @@ public class MainController {
 	}
 	
 	//	Controller의 예외처리 v2
-	@ExceptionHandler(CustomException.class)
+	/* @ExceptionHandler(CustomException.class)
 	public String handleControllerException(CustomException e,
 			Model model) {
 		model.addAttribute("name", e.getClass().getSimpleName());
 		model.addAttribute("message", e.getMessage());
-		return "errors/exception";
-	}
+		return "errors/exception"; 
+	} */
 	//	Controller의 예외처리 v1
 	/* @ExceptionHandler(Exception.class) 
 	@ResponseBody
