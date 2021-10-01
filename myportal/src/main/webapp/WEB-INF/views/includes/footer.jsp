@@ -1,4 +1,4 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 		<div id="footer">
-			<p>(c)opyright 2017, 2018</p>
+			<p>(c)opyright 2021</p>
 		</div>
