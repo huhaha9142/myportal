@@ -8,10 +8,12 @@
 	<typeAliases>
 		<typeAlias alias="guestbookVo" type="com.bitacademy.myportal.repository.GuestbookVo" />
 		<typeAlias alias="userVo" type="com.bitacademy.myportal.repository.UserVo" />
+		<typeAlias alias="boardVo" type="com.bitacademy.myportal.repository.boardVo" />
 	</typeAliases>
 	<!-- 매핑 설정 -->
 	<mappers>		<!-- 변경 후 에러 뜸 확인 -->
 		<mapper resource="mybatis/mappers/guestbook.xml" />
 		<mapper resource="mybatis/mappers/users.xml" />
+		<mapper resource="mybatis/mappers/board.xml" />
 	</mappers>
 </configuration>
