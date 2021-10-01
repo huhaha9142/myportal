@@ -20,30 +20,16 @@
 			<th>작성일</th>
 			<th>&nbsp;</th>
 		</tr>
+		<c:forEach items="${list }" var="vo">
 		<tr>
-			<td>3</td>
-			<td><a href="">세 번째 글입니다.</a></td>
-			<td>남승균</td>
-			<td>3</td>
-			<td>2015-10-11 12:04:20</td>
+			<td>${vo.no }</td>
+			<td><a href="">${vo.title }</a></td>
+			<td>${vo.userName }</td>
+			<td>${vo.hit }</td>
+			<td>${vo.regDate }</td>
 			<td><a href="">삭제</a></td>
 		</tr>
-		<tr>
-			<td>2</td>
-			<td><a href="">두 번째 글입니다.</a></td>
-			<td>남승균</td>
-			<td>3</td>
-			<td>2015-10-02 12:04:12</td>
-			<td><a href="" class="del">삭제</a></td>
-		</tr>
-		<tr>
-			<td>1</td>
-			<td><a href="">첫 번째 글입니다.</a></td>
-			<td>남승균</td>
-			<td>3</td>
-			<td>2015-09-25 07:24:32</td>
-			<td><a href="">삭제</a></td>
-		</tr>
+		</c:forEach>
 		<tr>
 			<td colspan="6"><a href="<c:url value="/board/write"/>">글쓰기</a></td>
 		</tr>

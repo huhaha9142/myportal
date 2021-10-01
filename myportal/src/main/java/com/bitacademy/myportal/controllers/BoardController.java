@@ -1,5 +1,7 @@
 package com.bitacademy.myportal.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +23,8 @@ public class BoardController {
 
 	@RequestMapping({"", "/", "/list"})
 	public String list(Model model) {
+		List<BoardVo> list = boardServiceImpl.getList();
+		model.addAttribute("list", list);
 		return "board/list";
 	}
 

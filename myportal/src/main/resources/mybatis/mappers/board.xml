@@ -14,4 +14,17 @@
 		${userNo}
 	)
 	</insert>
+	
+	<select id="selectAll" resultType="boardVo">
+	SELECT
+	    b.no,
+	    title,
+	    content,
+	    hit,
+	    reg_date as regDate,
+	    user_no as userNo,
+	    name as userName
+	FROM board b, users u
+	WHERE b.user_no = u.no
+	</select>
 </mapper>
