@@ -11,7 +11,7 @@ import com.bitacademy.myportal.repository.BoardVo;
 public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDao boardDaoImpl;
-	
+
 	@Override
 	public List<BoardVo> getList() {
 		// TODO Auto-generated method stub

@@ -9,6 +9,7 @@ import org.springframework.stereotype.Repository;
 public class BoardDaoImpl implements BoardDao {
 	@Autowired
 	private SqlSession sqlSession;
+
 	@Override
 	public List<BoardVo> selectAll() {
 		// TODO Auto-generated method stub
@@ -29,7 +30,7 @@ public class BoardDaoImpl implements BoardDao {
 	}
 
 	@Override
-	public int updata(BoardVo boardVo) {
+	public int update(BoardVo boardVo) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
