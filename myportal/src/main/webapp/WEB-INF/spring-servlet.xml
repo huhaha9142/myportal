@@ -19,7 +19,19 @@
 	</context:component-scan>	
 	
 	<!-- 정적 자원 처리를 위해 디폴터 서블릿 위임 핸들러 -->
-	<mvc:annotation-driven />
+	<mvc:annotation-driven>
+		<!-- 메시지 컨버터 등록 -->
+		<mvc:message-converters>
+			<bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+				<property name="supportedMediaTypes">
+					<list>
+					<!-- Object, Map 타입을 json으로 변환해주는 Jackson Converter -->
+						<value>application/json;charset=UTF-8</value>
+					</list>
+				</property>
+			</bean>
+		</mvc:message-converters>
+	</mvc:annotation-driven>
 	<mvc:default-servlet-handler />
 	
 	<!-- View Resolver -->
