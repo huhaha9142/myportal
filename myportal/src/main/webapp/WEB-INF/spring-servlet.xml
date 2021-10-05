@@ -44,4 +44,25 @@
 		<property name="suffix"
 			value=".jsp" /> <!-- 접미어 -->
 	</bean>
+	
+	<!-- Interceptors -->
+	<mvc:interceptors>
+		<!--  mvc:interceptor>
+			<mvc:mapping path="/board/**" />
+			<bean class="com.bitacademy.myportal.interceptors.MyInterceptor" />
+		</mvc:interceptor -->
+		<!-- mvc:interceptor>
+			<mvc:mapping path="/board/**" />
+			<bean class="com.bitacademy.myportal.interceptors.MyInterceptor2" />
+		</mvc:interceptor -->
+		<!-- Board 서비스에는 기본적으로 로그인 필요 -->
+		<!-- /board/list에는 모든 사용자가 열람할 수 있또록 세팅 -->
+		<mvc:interceptor>
+			<mvc:mapping path="/board/**" />
+			<mvc:exclude-mapping path="/board/list/**" />
+			<mvc:exclude-mapping path="/board/" />
+			<mvc:exclude-mapping path="/board/" />
+			<bean class="com.bitacademy.myportal.interceptors.AuthInerceptor" />
+		</mvc:interceptor>
+	</mvc:interceptors>
 </beans>
