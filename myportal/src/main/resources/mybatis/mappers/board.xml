@@ -11,20 +11,40 @@
 		#{content},
 		0,
 		sysdate,
-		${userNo}
+		#{userNo}
 	)
 	</insert>
-	
 	<select id="selectAll" resultType="boardVo">
-	SELECT
-	    b.no,
-	    title,
-	    content,
-	    hit,
-	    reg_date as regDate,
-	    user_no as userNo,
-	    name as userName
-	FROM board b, users u
-	WHERE b.user_no = u.no
+		SELECT b.no,
+		    title,
+		    content,
+		    hit,
+		    reg_date as regDate,
+		    user_no as userNo,
+		    name as UserName
+		FROM board b, USERS u
+		WHERE b.user_no = u.no
 	</select>
-</mapper>
+	<select id="selectContent" resultType="boardVo">
+		SELECT title,
+		    content,
+		    no
+		FROM board
+		WHERE no=#{no}
+	</select>
+	<update id="hitUp">
+		UPDATE board
+		SET hit=hit+1
+		WHERE no=#{no}
+	</update>
+	<update id="contentUpdate">
+		UPDATE board
+		SET title = #{title},
+		    content = #{content}
+		WHERE no=#{no}
+	</update>
+	<delete id="deleteContent">
+	DELETE FROM board 
+	WHERE no=#{no}
+	</delete>
+</mapper> 
