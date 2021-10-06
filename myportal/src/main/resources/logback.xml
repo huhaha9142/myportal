@@ -9,7 +9,7 @@
 		<encoder>
 			<charset>UTF-8</charset>
 			<Pattern>
-			#d{HH:mm:ss.SSS} %thread %-5level %logger{5} - %msg%n
+			%d{HH:mm:ss.SSS} %thread %-5level %logger{5} - %msg%n
 			</Pattern>
 		</encoder>
 	</appender>
@@ -21,7 +21,7 @@
 		<encoder>
 			<charset>UTF-8</charset>
 			<Pattern>
-			#d{HH:mm:ss.SSS} %thread %-5level %logger{5} - %msg%n
+			%d{HH:mm:ss.SSS} %thread %-5level %logger{5} - %msg%n
 			</Pattern>
 		</encoder>
 		<!-- 롤링을 수행할 정책 -->

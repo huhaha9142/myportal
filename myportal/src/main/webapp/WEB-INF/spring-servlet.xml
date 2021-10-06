@@ -62,7 +62,7 @@
 			<mvc:exclude-mapping path="/board/list/**" />
 			<mvc:exclude-mapping path="/board/" />
 			<mvc:exclude-mapping path="/board/" />
-			<bean class="com.bitacademy.myportal.interceptors.AuthInerceptor" />
+			<bean class="com.bitacademy.myportal.interceptors.AuthInterceptor" />
 		</mvc:interceptor>
 	</mvc:interceptors>
 	
